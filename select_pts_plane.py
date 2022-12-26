@@ -28,28 +28,28 @@ if __name__ == '__main__' :
 
     # = GT
     # Read source image.
-    im_src = cv2.imread('./img/114_ov.png')
+    im_src = np.ones((320, 240, 3))*255
 
     canvas_img = im_src.copy()
     cv2.imshow("Image", canvas_img)
-    cv2.waitKey(1)
+    cv2.waitKey(0)
+    # key = cv2.waitKey(1)
 
     cv2.setMouseCallback("Image", mouse_click)
     # input with click or stored list
     # Four corners of the book in source image
     pts_src = []
 
-
     while True:
-        if cv2.waitKey(0):
+        key = cv2.waitKey(1)
+        if key == ord('q'):
             break
+        elif key == ord('s'):
+            cv2.imwrite("./result/pts_img_plane.png", canvas_img)
+            print(np.array(pts_src))
+        else:
+            pass
     
- 
-    # Display images
-    
-    cv2.imwrite("./result/pts_img.png", canvas_img)
     cv2.destroyAllWindows()
-
-    print(np.array(pts_src))
 
     temp_value = 0
