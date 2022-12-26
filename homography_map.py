@@ -8,7 +8,7 @@ if __name__ == '__main__' :
 
     # = GT
     # Read source image.
-    im_src = cv2.imread('RGB.jpg')
+    im_src = cv2.imread('./img/RGB.jpg')
     # input with click or stored list
     # Four corners of the book in source image
     pts_src = np.array([
@@ -22,7 +22,7 @@ if __name__ == '__main__' :
     
     # = Dest box
     # Read destination image.
-    im_dst = cv2.imread('GT.png')    # : static square
+    im_dst = cv2.imread('./gt/GT.png')    # : static square
 
     # Four corners of the book in destination image.
     pts_dst = np.array([
