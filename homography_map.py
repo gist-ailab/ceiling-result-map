@@ -21,7 +21,8 @@ if __name__ == '__main__' :
             try:
                 # = GT
                 # Read source image.
-                im_src = cv2.imread(f'{image_root}/{n:05d}.png')
+                # im_src = cv2.imread(f'{image_root}/{n:05d}.png')
+                im_src = cv2.imread(f'{image_root}/{n:05d}.jpg')
                 resized_im_src = cv2.resize(im_src.copy(), (240,320))
                 im_src_vis = resized_im_src.copy()
                 im_src2 = cv2.imread(f'{mask_root}/{n:05d}.png')
