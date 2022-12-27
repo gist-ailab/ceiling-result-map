@@ -28,11 +28,12 @@ if __name__ == '__main__' :
 
     # = GT
     # Read source image.
-    im_src = cv2.imread('./img/114_ov.png')
+    im_src = cv2.imread('./img/156_ov.png')
 
     canvas_img = im_src.copy()
     cv2.imshow("Image", canvas_img)
-    cv2.waitKey(0)
+    key = cv2.waitKey(1)
+    key = None
     # key = cv2.waitKey(1)
 
     cv2.setMouseCallback("Image", mouse_click)
@@ -41,7 +42,7 @@ if __name__ == '__main__' :
     pts_src = []
 
     while True:
-        key = cv2.waitKey(1)
+        key = cv2.waitKey(0)
         if key == ord('q'):
             break
         elif key == ord('s'):
